@@ -1,0 +1,37 @@
+<div class="login-container">
+
+  <header class="login__header">
+    <div class="login__header__left">
+      <img src="assets/logo.png" />
+      <h2>Welcome!</h2>
+    </div>
+    <div class="login__header__right">
+      <mat-card class="login__header__right__card">
+        <mat-card-content class="login__header__right__card__content">
+          <form #form="ngForm" (ngSubmit)="login(form)" class="login-form">
+            <input name="email" ngModel placeholder="Email address " required type="text">
+            <input name="password" ngModel placeholder="Password" required type="text">
+            <button [disabled]="form.invalid || form.pending"
+                    class="login-button"
+                    *ngIf="!form.pending"
+                    type="submit">Log In
+            </button>
+          </form>
+          <a>Forgot Your Password?</a>
+          <hr>
+          <button class="create-account" (click)="openRegister()">Create New Account</button>
+        </mat-card-content>
+
+      </mat-card>
+
+      <p class="tagline">Text</p>
+    </div>
+
+
+  </header>
+
+
+  <footer class="login__footer">
+    <p>Footer</p>
+  </footer>
+</div>
